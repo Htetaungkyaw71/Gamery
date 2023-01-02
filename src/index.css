@@ -1,3 +1,150 @@
-.app {
-  color: #000;
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@1,700&family=Lato&family=Martian+Mono:wght@300&family=Poppins:wght@300;600;800&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #171717;
+  color: #EDEDED;
+  font-family: 'Arimo', sans-serif;
+  font-family: 'Lato', sans-serif;
+  margin: 0px;
+}
+
+.navbar {
+  background-color:#171717;
+  color: white;
+  position: fixed;
+  width: 100%;
+  margin: 0px;
+  padding: 0px 35px 0px 35px;
+  border-bottom: 1px solid #444444;
+  text-shadow: 1px 1px 1px #444444;
+  top: 0;
+  z-index: 2;
+}
+
+.navbar-list{
+  list-style-type: none;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.card {
+  width: 270px;
+  margin-bottom: 25px;
+  background-color: #373A40;
+  color: white;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.card:hover{
+  transform: scale(1.06);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top {
+  margin-top: 100px;
+}
+
+.col {
+  flex: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card-item {
+  padding: 0px 20px 10px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: "----";
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.card-extra {
+  display: flex;
+  justify-content: space-between;
+}
+
+.genre{
+  padding: 5px;
+  background-color: #7A8288;
+  border-radius: 10px;
+  color: black;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.icon {
+  padding: 5px;
+}
+
+.pagination {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.pagination li {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #7A8288;
+  margin: 0 4px;
+  margin-bottom: 10px;
+}
+
+
+.pagination li:hover {
+  background-color: #7A8288;
+  color: white;
+}
+
+.selected {
+  background-color: #7A8288;
+  color: white;
+}
+
+@media screen and (max-width:700px) {
+  .pagination {
+    display: block;
+  }
 }
