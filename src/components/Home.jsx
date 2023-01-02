@@ -16,7 +16,7 @@ function Home({itemsPerPage}) {
     },[])
    
 
-    console.log(games)
+
 
     const [itemOffset, setItemOffset] = useState(0);
 

@@ -4,9 +4,8 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './App';
-import { store } from './redux/configureStore';
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-
+import store from './redux/configureStore';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
