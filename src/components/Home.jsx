@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchGames } from '../redux/actions'
 import ReactPaginate from 'react-paginate';
 import Card from './Card'
+import TopCard from './TopCard';
 
 function Home({itemsPerPage}) {
     const games = useSelector((state)=>state.games)
@@ -12,6 +13,7 @@ function Home({itemsPerPage}) {
             dispatch(fetchGames())
         }
     },[])
+   
 
     console.log(games)
 
@@ -26,17 +28,39 @@ function Home({itemsPerPage}) {
       const newOffset = (event.selected * itemsPerPage) % games.length;
       setItemOffset(newOffset);
     };
-  
+
+    let topgames;
+
+    if(games.length > 0){
+      const topgameone = games.filter(game=>game.id === 452)
+      const topgametwo = games.filter(game=>game.id === 523)
+      const topgamethree = games.filter(game=>game.id === 540)
+      let topgameList = [topgameone[0],topgametwo[0],topgamethree[0]]
+      console.log(topgameList)
+      topgames= topgameList.map(game=><TopCard game={game} key={game.id} />)
+    }
+
+    
+
+
+    
 
     const gameList = currentItems.map(game=><Card game={game} key={game.id} />)
 
+
+
+
+
   return (
     <Fragment>
-      <div className='top'>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nihil, reiciendis repudiandae excepturi qui consectetur quod pariatur ducimus. Vel repellat reprehenderit excepturi voluptates magnam dignissimos, et minus obcaecati consectetur eos!
-          </p>
+      {games ? <div className='main'>
+        <div className='top'>
+        <h1>Top Free Shooter Games for PC and Browser In 2023!</h1>
+         <div className='row-top'>
+          {topgames && topgames}
+         </div>
       </div>
+      <hr />
       <div className='row'>
       {gameList}
     <div className='main-pagination'>
@@ -54,6 +78,10 @@ function Home({itemsPerPage}) {
    
  
       </div>
+      </div>
+    :<Loading/>  
+    }
+    
     </Fragment>
     
  

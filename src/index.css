@@ -11,6 +11,11 @@ body{
   margin: 0px;
 }
 
+.main {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 .navbar {
   background-color:#171717;
   color: white;
@@ -55,10 +60,12 @@ body{
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .top {
   margin-top: 100px;
+  margin-bottom: 30px;
 }
 
 .col {
@@ -66,6 +73,70 @@ body{
   display: flex;
   justify-content: center;
 }
+
+.row-top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.col-top{
+  flex: 33.33%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-top-img {
+  width: 80%;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.card-top-img:hover{
+  transform: scale(1.06);
+}
+
+.top h1 {
+  text-align: center;
+}
+
+.icon {
+  font-size: 25px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 640px) {
+  .row-top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .top h1 {
+    font-size: 25px;
+  }
+  .main {
+    padding: 0px;
+  }
+}
+
+
+.col-top .card{
+  width: 80%;
+}
+
+.col-top .card .card-img{
+  height: auto;
+}
+
+
 
 .card-img {
   width: 100%;

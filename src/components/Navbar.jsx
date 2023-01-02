@@ -1,4 +1,7 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGears, faMicrophoneLines } from '@fortawesome/free-solid-svg-icons'
+
 
 function Navbar() {
   return (
@@ -8,7 +11,8 @@ function Navbar() {
             <h3>GAMERY</h3>
           </li>
           <li className='navbar-item'>
-            <a href="">Browse games</a>
+            <FontAwesomeIcon icon={faMicrophoneLines} className="icon"/>
+            <FontAwesomeIcon icon={faGears}  className="icon"/>
           </li>
         </ul>
     </div>
