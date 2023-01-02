@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
@@ -6,9 +7,9 @@ import React from 'react'
 function TopCard({game}) {
   return (
     <div className='col-top'>
-        {/* <div className='card'> */}
-            <img src={game.thumbnail} className="card-top-img"/>
-        {/* </div> */}
+        <Link to={`/${game.id}`}>
+            <img src={game.thumbnail} className="card-top-img"/>    
+        </Link>
     </div>
 
   )

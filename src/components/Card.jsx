@@ -1,12 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindows, faChrome } from '@fortawesome/free-brands-svg-icons'
+import { Link } from 'react-router-dom'
 
 
 
 function Card({game}) {
   return (
     <div className='col'>
+        <Link to={`/${game.id}`}>
         <div className='card'>
             <img src={game.thumbnail} className="card-img"/>
             <div className='card-item'>
@@ -26,6 +28,8 @@ function Card({game}) {
             </div>
    
         </div>
+        </Link>
+     
     </div>
 
   )

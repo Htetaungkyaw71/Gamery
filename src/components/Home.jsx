@@ -4,9 +4,10 @@ import { fetchGames } from '../redux/actions'
 import ReactPaginate from 'react-paginate';
 import Card from './Card'
 import TopCard from './TopCard';
+import Navbar from "./Navbar"
 
 function Home({itemsPerPage}) {
-    const games = useSelector((state)=>state.games)
+    const {games} = useSelector((state)=>state.games)
     const dispatch = useDispatch()
     useEffect(()=>{
         if(games.length <= 0){
@@ -32,11 +33,10 @@ function Home({itemsPerPage}) {
     let topgames;
 
     if(games.length > 0){
-      const topgameone = games.filter(game=>game.id === 452)
+      const topgameone = games.filter(game=>game.id === 466)
       const topgametwo = games.filter(game=>game.id === 523)
       const topgamethree = games.filter(game=>game.id === 540)
       let topgameList = [topgameone[0],topgametwo[0],topgamethree[0]]
-      console.log(topgameList)
       topgames= topgameList.map(game=><TopCard game={game} key={game.id} />)
     }
 
@@ -53,15 +53,21 @@ function Home({itemsPerPage}) {
 
   return (
     <Fragment>
+      <Navbar />
       {games ? <div className='main'>
         <div className='top'>
-        <h1>Top Free Shooter Games for PC and Browser In 2023!</h1>
+        <h1>Top Three Games for PC and Browser In 2023!</h1>
          <div className='row-top'>
           {topgames && topgames}
          </div>
       </div>
       <hr />
+      <p className='game-title'>
+      <b>371</b> free-to-play games found in our games list!
+   
+    </p>
       <div className='row'>
+      
       {gameList}
     <div className='main-pagination'>
         <ReactPaginate

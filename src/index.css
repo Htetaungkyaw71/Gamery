@@ -3,6 +3,12 @@
 *{
   box-sizing: border-box;
 }
+
+
+a {
+  text-decoration: none;
+}
+
 body{
   background-color: #171717;
   color: #EDEDED;
@@ -16,7 +22,7 @@ body{
   padding-right: 50px;
 }
 
-.navbar {
+.navbar, .navbar-detail {
   background-color:#171717;
   color: white;
   position: fixed;
@@ -29,7 +35,24 @@ body{
   z-index: 2;
 }
 
+.game-title{
+  padding-left: 20px;
+  padding-top: 10px;
+  color:#bbbbbb;
+}
+
+
+
 .navbar-list{
+  list-style-type: none;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-detail-list {
   list-style-type: none;
   display: flex;
   margin: 0px;
@@ -51,6 +74,7 @@ body{
   border-radius: 5px;
   transition: 0.5s;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .card:hover{
@@ -90,7 +114,7 @@ body{
 }
 
 .card-top-img {
-  width: 80%;
+  width: 90%;
   margin-bottom: 25px;
   border-radius: 3px;
   transition: 0.5s;
@@ -109,22 +133,6 @@ body{
   font-size: 25px;
   margin-left: 25px;
   cursor: pointer;
-}
-
-
-@media (max-width: 640px) {
-  .row-top {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 100%;
-  }
-  .top h1 {
-    font-size: 25px;
-  }
-  .main {
-    padding: 0px;
-  }
 }
 
 
@@ -162,16 +170,18 @@ body{
 }
 
 .genre{
-  padding: 5px;
+  padding: 0px 10px 0px 10px;
   background-color: #7A8288;
   border-radius: 10px;
-  color: black;
+  color: rgb(37, 37, 37);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
+  align-items: center;
+  display: flex;
 }
 
-.icon {
-  padding: 5px;
+.icon svg {
+  font-size: 20px;
 }
 
 .pagination {
@@ -213,9 +223,128 @@ body{
   background-color: #7A8288;
   color: white;
 }
+/* Detail Page */
+
+.detail-page {
+ margin-top: 50px;
+}
+
+.detail-row {
+  display: flex;
+}
+
+.detail-col1 {
+  flex: 30%;
+  padding: 50px;
+}
+.detail-col2 {
+  flex: 70%;
+  padding: 50px;
+}
+
+.detail-col1 a {
+  color: white;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #4a4d50;
+} 
+
+.detail-col1 a:hover {
+  background-color: #3f3f3f;
+} 
+
+.information-row {
+  display: flex;
+}
+
+.information-col {
+  flex: 33%;
+}
+
+.information-col span {
+  color: #7A8288;
+}
+
+.screenshots{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.screenshots img{
+  width: 300px;
+  height: 200px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.system-row {
+  display: flex;
+}
+
+.system-col {
+  flex: 50%;
+}
+
+.system-col span {
+  color: #7A8288;
+}
+
+
+/* Detail Page */
+
+
+
+
+@media (max-width: 640px) {
+  .row-top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .top h1 {
+    font-size: 25px;
+  }
+  .main {
+    padding: 0px;
+  }
+  .detail-col1, .detail-col2 {
+    padding: 10px;
+  } 
+  .game-title{
+      text-align: center;
+  }
+  
+
+}
+
+
 
 @media screen and (max-width:700px) {
   .pagination {
     display: block;
   }
+
+  .navbar-detail{
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+
+  .detail-row {
+    flex-direction: column;
+  }
+
+  .detail-col1 img {
+    width: 100%;
+  } 
+}
+
+@media screen and (min-width:1500px) {
+  .detail-col1 img {
+    width: 100%;
+  } 
 }

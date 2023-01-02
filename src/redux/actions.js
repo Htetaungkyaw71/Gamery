@@ -1,9 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const FETCH_GAMES = 'FETCH_GAMES';
-export const FETCH_DETAIL = 'FETCH_DETAIL';
+export const GET_DETAIL = 'GET_DETAIL';
 
 const GAME_URL = "https://free-to-play-games-database.p.rapidapi.com/api/games";
+const DETAIL_URL = "https://free-to-play-games-database.p.rapidapi.com/api/game?id=";
 
 const options = {
 	method: 'GET',
@@ -13,8 +14,23 @@ const options = {
 	}
 };
 
+
+
 export const fetchGames = createAsyncThunk(FETCH_GAMES, async()=>{
     const response = await fetch(GAME_URL, options);
     const data = await response.json()
     return data
 })
+
+
+export const getDetailData = createAsyncThunk(GET_DETAIL, async(id)=>{
+    try {
+        console.log("detailed called")
+		const response = await fetch(`${DETAIL_URL}${id}`, options)
+		const data = await response.json()
+        return data;
+      } catch (error) {
+        console.error(error);
+      }
+    
+})  
