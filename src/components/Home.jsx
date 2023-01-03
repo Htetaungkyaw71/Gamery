@@ -70,7 +70,6 @@ function Home({ itemsPerPage }) {
             <input type="text" placeholder="Search Games" onChange={handleChange} value={search} className="search-input" />
           </div>
           <div className="row">
-
             {gameList}
             <div className="main-pagination">
               <ReactPaginate
@@ -84,7 +83,6 @@ function Home({ itemsPerPage }) {
                 className="pagination"
               />
             </div>
-
           </div>
         </div>
       )
