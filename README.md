@@ -227,7 +227,9 @@ If you like this project...
 
 I would like to thank...
 
-Inspiration - https://freetogame.com/
+- Inspiration api - [Freetogame api](https://freetogame.com/)
+- Design is inspired from a design made by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio).
+- Linters are made by [Microverse Inc](https://github.com/microverseinc).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

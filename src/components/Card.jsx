@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindows, faChrome } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Card({ game }) {
   return (
@@ -33,5 +33,16 @@ function Card({ game }) {
 
   );
 }
+
+Card.propTypes = {
+  game: PropTypes.shape({
+    title: PropTypes.string,
+    id: PropTypes.number,
+    thumbnail: PropTypes.string,
+    platform: PropTypes.string,
+    short_description: PropTypes.string,
+    genre: PropTypes.string,
+  }).isRequired,
+};
 
 export default Card;

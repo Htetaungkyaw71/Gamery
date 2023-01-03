@@ -295,6 +295,22 @@ body {
   padding-top: 250px;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 7px;
+  width: 40%;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
 /* Detail Page */
 
 @media (max-width: 640px) {

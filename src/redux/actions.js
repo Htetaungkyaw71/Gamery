@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const FETCH_GAMES = 'FETCH_GAMES';
 export const GET_DETAIL = 'GET_DETAIL';
+export const SERACH = 'SERACH';
 
 const GAME_URL = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
 const DETAIL_URL = 'https://free-to-play-games-database.p.rapidapi.com/api/game?id=';

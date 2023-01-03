@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 import { fetchGames } from '../redux/actions';
@@ -9,6 +9,8 @@ import Navbar from './Navbar';
 import Loading from './Loading';
 
 function Home({ itemsPerPage }) {
+  const [search, setSearch] = useState('');
+
   const { games } = useSelector((state) => state.games);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -35,7 +37,18 @@ function Home({ itemsPerPage }) {
     const topgameList = [topgameone[0], topgametwo[0], topgamethree[0]];
     topgames = topgameList.map((game) => <TopCard game={game} key={game.id} />);
   }
-  const gameList = currentItems.map((game) => <Card game={game} key={game.id} />);
+  let gameList;
+  const filterArr = games.filter((game) => game.title.toLowerCase().includes(search));
+  if (filterArr && search !== '') {
+    gameList = filterArr.map((game) => <Card game={game} key={game.id} />);
+  } else {
+    gameList = currentItems.map((game) => <Card game={game} key={game.id} />);
+  }
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   return (
     <>
       <Navbar />
@@ -50,10 +63,12 @@ function Home({ itemsPerPage }) {
           <hr />
           <p className="game-title">
             <b>371</b>
-            {' '}
             free-to-play games found in our games list!
-
           </p>
+
+          <div className="search">
+            <input type="text" placeholder="Search Games" onChange={handleChange} value={search} className="search-input" />
+          </div>
           <div className="row">
 
             {gameList}
@@ -79,5 +94,9 @@ function Home({ itemsPerPage }) {
 
   );
 }
+
+Home.propTypes = {
+  itemsPerPage: PropTypes.number.isRequired,
+};
 
 export default Home;
