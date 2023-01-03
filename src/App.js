@@ -5,7 +5,6 @@ import Home from './components/Home';
 function App() {
   return (
     <div className="app">
-
       <Routes>
         <Route path="/" element={<Home itemsPerPage={24} />} />
         <Route path="/:id" element={<Detail />} />
