@@ -46,7 +46,7 @@ function Home({ itemsPerPage }) {
   }
 
   const handleChange = (e) => {
-    setSearch(e.target.value);
+    setSearch(e.target.value.toLowerCase());
   };
 
   return (
