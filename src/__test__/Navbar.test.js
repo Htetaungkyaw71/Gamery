@@ -1,18 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import useEvent from '@testing-library/user-event';
-import Navbar from '../components/Navbar';
 import { Provider } from 'react-redux';
-import store from '../redux/configureStore'
 import { BrowserRouter } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import store from '../redux/configureStore';
 
 describe('Testing Navigation', () => {
   test('Test for Navbar component', () => {
     render(
-        <Provider store={store}>
+      <Provider store={store}>
         <BrowserRouter>
-            <Navbar />     
+          <Navbar />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     useEvent.click(screen.getByText('GAMERY'));
