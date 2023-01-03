@@ -288,6 +288,13 @@ body {
   color: #7a8288;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 250px;
+}
+
 /* Detail Page */
 
 @media (max-width: 640px) {
