@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGears, faMicrophoneLines, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 function DetailNavbar() {
@@ -18,8 +18,20 @@ function DetailNavbar() {
           </Link>
         </li>
         <li className="navbar-item">
-          <FontAwesomeIcon icon={faMicrophoneLines} className="icon" />
-          <FontAwesomeIcon icon={faGears} className="icon" />
+          <div className="dropdown">
+            <button className="dropbtn" type="button">Browse games</button>
+            <div className="dropdown-content">
+              <Link to="/shooter">Shooter</Link>
+              <Link to="/anime">Anime</Link>
+              <Link to="/racing">Racing</Link>
+              <Link to="/social">Social</Link>
+              <Link to="/sports">Sports</Link>
+              <Link to="/mmorpg">MMORPG</Link>
+              <Link to="/sci-fi">Sci-fi</Link>
+              <Link to="/fantasy">Fantasy</Link>
+              <Link to="/strategy">Strategy</Link>
+            </div>
+          </div>
         </li>
       </ul>
     </div>

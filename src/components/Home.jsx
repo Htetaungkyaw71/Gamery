@@ -62,7 +62,7 @@ function Home({ itemsPerPage }) {
           </div>
           <hr />
           <p className="game-title">
-            <b>371</b>
+            <b style={{marginRight:"5px"}}>371</b>
             free-to-play games found in our games list!
           </p>
 

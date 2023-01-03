@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 function Card({ game }) {
   return (
     <div className="col">
-      <Link to={`/${game.id}`}>
+      <Link to={`/game/${game.id}`}>
         <div className="card">
           <img src={game.thumbnail} className="card-img" alt="game_image" />
           <div className="card-item">
